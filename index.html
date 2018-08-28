@@ -3,12 +3,13 @@
     <title>JavaScript Tracker Demo</title>
     <script src="JSSynth.js"></script>
     <script>
+      window.addEventListener('load', initTracker, false);
       function initTracker() {
         initJSSynth();
       }
     </script>
   </head>
   <body>
-    <canvas id="JSTCanvas" onload="initTracker()"></canvas>
+    <canvas id="JSTCanvas"></canvas>
   </body>
 </html>
