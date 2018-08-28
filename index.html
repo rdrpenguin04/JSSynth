@@ -1,8 +1,14 @@
 <html>
   <head>
     <title>JavaScript Tracker Demo</title>
+    <script src="JSSynth.js"></script>
+    <script>
+      function initTracker() {
+        initJSSynth();
+      }
+    </script>
   </head>
   <body>
-    <canvas id="JSTCanvas"></canvas>
+    <canvas id="JSTCanvas" onload="initTracker()"></canvas>
   </body>
 </html>
