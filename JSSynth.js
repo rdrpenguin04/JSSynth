@@ -1,7 +1,8 @@
-var context;
+var JSSynthContext;
+var JSSynthReady = false;
 
 function initJSSynth() {
-  window.addEventListener('load', init, false);
+  console.log("Starting JSSynth version 1.0 by Ray Redondo...");
   function init() {
     try {
       // Fix up for prefixing
@@ -11,5 +12,7 @@ function initJSSynth() {
     catch(e) {
       alert('Web Audio API is not supported in this browser');
     }
+    JSSynthReady = true;
   }
+  window.addEventListener('load', init, false);
 }
