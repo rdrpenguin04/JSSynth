@@ -10,7 +10,7 @@ var music = [[110, 220, 440, 880]];
 
 function initJSSynth() {
   console.log("Starting JSSynth version 1.0 by Ray Redondo...");
-  function __initJSSynthReal() {
+  async function __initJSSynthReal() {
     try {
       // Fix up for prefixing
       window.AudioContext = window.AudioContext||window.webkitAudioContext;
@@ -32,8 +32,9 @@ function initJSSynth() {
     JSSynthReady = true;
     for(var i = 0; i < music.length; i++) {
       for(var j = 0; j < 4; j++) {
-        oscillators[i].frequency.value = music[i][j];
+        oscillators[j].frequency.value = music[i][j];
       }
+      await sleep(100);
     }
   }
   window.addEventListener('load', __initJSSynthReal, false); // Starts async
